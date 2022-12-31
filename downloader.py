@@ -17,7 +17,7 @@ class downloader:
 
     async def download(self, picture):
         try:
-            if os.path.exists(f"./pictures/{picture['pid']}.{picture['ext']}"): return await self.download(self.get_url(self._params))
+            if os.path.exists(f"./pictures/{picture['pid']}.{picture['ext']}"): return print(f"圖片: {picture['pid']}.{picture['ext']}已存在")
             print(f"正在下載圖片: {picture['pid']}.{picture['ext']}")
             async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=180)) as session:
                 async with session.get(picture["urls"]["original"]) as r:
