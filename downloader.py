@@ -63,7 +63,9 @@ if __name__ == "__main__":
     else : ai = 0
 
     num = int(input("獲取數量: "))
-    if num > 20: print(f"數量過多，將只下載{num := 20}張圖片")
+    if num > 20: 
+        print(f"數量過多，將只下載20張圖片")
+        num = 20
 
     params = [
         ("keyword", keyword),
